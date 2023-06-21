@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+ #!/usr/bin/env python3
 from signal import signal, SIGINT
 from aiofiles.os import path as aiopath, remove as aioremove
 from aiofiles import open as aiopen
@@ -53,8 +53,8 @@ async def stats(client, message):
 async def start(client, message):
     buttons = ButtonMaker()
     buttons.ubutton(
-        "Repo", "https://www.github.com/anasty17/mirror-leech-telegram-bot")
-    buttons.ubutton("Owner", "https://t.me/anas_tayyar")
+        "Repo", "https://www.github.com")
+    buttons.ubutton("Owner", "https://t.me/mr_spidy")
     reply_markup = buttons.build_menu(2)
     if await CustomFilters.authorized(client, message):
         start_string = f'''
@@ -63,7 +63,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         await sendMessage(message, start_string, reply_markup)
     else:
-        await sendMessage(message, 'You Are not authorized user! Deploy your own mirror-leech bot', reply_markup)
+        await sendMessage(message, 'Wait ! Why are you here ?', reply_markup)
 
 
 async def restart(client, message):
